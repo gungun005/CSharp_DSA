@@ -1,0 +1,45 @@
+#How to use a data structure that is equivalent to map in C++->That is done using Dictionary in C#
+For C++ we use map<int,int>mp;
+But for C# the syntax is quite different 
+We use=>
+Dictionary<datatype1,datatype2>Dictionary_Name=new Dictionary<dattype1,datatype2>();
+//Now there can be different scenarios where we have to map are key to different values
+1st Approach->Map keys with it's frequencies
+  //way to initialize a predefined array with it's elements!
+  
+  int []arr={1,2,3,2,3,4,4,5,6};
+  Dictionary<int,int>d=new Dictionary<int,int>d();
+//foreach will refer each element in the array not it's index!
+  foreach(int x in arr)
+  {
+    //Now here  is the difference we have to check whether the key exist or not 
+    //If the key doesn't exist then we have to create the key else we can update the value
+    if(!d.ContainsKey(x))
+      {  
+      d[x]=0;
+      d[x]++;
+      }
+    else
+      {
+      d[x]++;
+      }
+  }
+2nd Approach ->Map the key with its index
+int []arr={1,2,,3,4,5,6,6};
+Dictionary<int,int>d=new Dictionary<int,int>();
+for(int i=0;i<arr.length();i++)
+{
+d[arr[i]]=i;
+}
+3rd Approach->Map each index with element
+int []arr={1,2,3,4};
+Dictionary<int,int>map=new Dictionary<int,int>();
+for(int i=0;i<arr.length();i++)
+{
+map[i]=arr[i];
+}
+
+    
+//These are very basics concept to get the map(Dictionary)in C#
+  
+
