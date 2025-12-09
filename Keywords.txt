@@ -1,0 +1,47 @@
+STATIC KEYWORD:-
+
+Static are something that belongs to the class itself
+They are created once in memory and can be shared by every member of that class
+
+Why we need Static?
+1-To reuse common Method/Properties
+2-To avoid violating OOPS principles
+3-To avoid creating unnecessary objects
+
+CONST KEYWORD:-
+
+Const are compile time constant
+Values should be known at compile time
+They are static by default
+They cannot be assign in constructor
+Value cannot change at runtime
+It stays same for entire class
+
+Where Const is stored?
+Only one copy is created
+Value is directly replaced into MSIL Code
+
+
+READONLY KEYWORD:-
+
+Its runtime constant
+Values cannot change after initialization
+It can be initialized either at time of declaration or inside constructor
+Instance by default
+It stays like variable
+Its different for each object
+
+
+CHECKED KEYWORD:-
+
+"overflow checking is unchecked by default, but it is not correct to say all variables in C# are unchecked"
+It enables overflow exceptions
+It will throw overflow exception when overflow happens
+
+UNCHECKED KEYWORD:-
+
+It disables overflow exception
+It forces C# Compiler to ignore overflow even when compiler normally checks it
+
+
+
