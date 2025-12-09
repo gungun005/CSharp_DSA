@@ -1,0 +1,68 @@
+PROPERTIES IN C#:-
+
+A property is a class member with "controlled accessors"
+They can validate data
+They can get and set the values
+It encapsulates private fields
+
+WHY WE NEED THEM ?
+
+If we expose our fields as public everyone can access it and set invalid values so we declare fields as private and expose them
+as properties
+
+
+TYPES OF PROPERTIES-
+1->Read only:-
+
+contains only get
+
+e.g.->public int ID
+{
+get{return id;}
+}
+
+2->Write only:-
+
+contains only set
+e.g.->public int ID
+{
+set{marks=value;}
+}
+
+3->Read-Write Only:-
+
+contains get and set both
+e.g.->
+public int ID{
+get{return marks;}
+set{marks=value;}
+}
+
+4->Auto-Implemented Property:-
+
+when no extra logic is needed C# automatically creates a hidden private field
+e.g.->
+public int Age{get;set;}
+
+
+ACCESSORS IN C#-
+
+They are special methods inside a property
+
+1->SET ACCESSOR-used to assign value to private fields
+2->GET ACCESSOR-used to return the value of private fields
+
+TYPES OF ACCESSORS:-
+
+1->Symmetric:-Both Accessors(means get n set) have same visibility
+2->Asymmetric:-Different visibility for get n set
+
+DEFAULT ACCESIBILITY OF ACCESSORS:-
+It inherits the property's access modifier unless explicitly changed
+
+
+
+
+
+
+
