@@ -1,0 +1,56 @@
+NOW COMING TO THE MOST IMPORTANT CONCEPT I HAVE TO BE THROUGH IS OOPS IN C#
+
+OOPS-
+It is a design technique not a language feature
+It tells you how to structure and design your software using:-
+-real world objects
+-relationship between objects
+-oops pillars
+
+Why OOPS?
+Because real world systems are built from objects not functions
+
+Class- 
+A class is like a design, plan or blueprint
+E.g. A car design is a Class
+Actual cars(BMW )is object
+It's a user defined data type that contains:-
+1->Properties(data/state)
+2->Methods(function/behaviour)
+
+e.g.->
+public class Cal
+{
+public int sum(int a ,int b)
+{
+return a+b;
+}
+}
+
+Objects-
+
+Object is an instance of class
+It's created using new keyword
+It allows access to class members using '.' operator
+
+How to create a class and objects in C#?
+
+Class Syntax:-
+
+public ClassName
+{
+//fields
+//properties
+//methods
+}
+
+ Object Creation:-
+ClassName obj=new ClassName();
+
+TYPES OF CLASSES IN C#-
+1->CONCRETE CLASSES-normal classes you can create objects from
+2->ABSTRACT CLASSES-cannot create object must be inherited
+3->SEALED CLASSES-cannot be inherited
+4->STATIC CLASSES-all members must be static no object creation
+5->PARTIAL CLASSES-class split across multiple files
+
