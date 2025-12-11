@@ -18,4 +18,4 @@ List<int>list=nums.ToList();
 Converting List to Array:-
   int []arr=list.ToArray();
 
-
+In list we use Count method to traverse the list and Array we can use Length method 
