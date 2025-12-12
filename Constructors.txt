@@ -1,0 +1,194 @@
+CONSTRUCTOR IN C#
+
+What is a Constructor?
+
+A constructor is a special method inside a Class-
+
+1->It has same name as class
+2->It has no return type
+3->It runs automatically when you create an object
+4->Initializes variables of class
+5->It can be overloaded
+6->can have modifiers
+7->can have logic inside
+
+
+Why we want to use a Constructor?
+
+Because an object starts as a raw empty memory
+Constructor makes it a proper working object
+It -
+1->Checks and validate the values
+2->Set the initial values
+3->Loads resources
+4->Prepares parent class
+
+Why constructor cannot be overloaded?
+
+It belongs to the class that creates the object
+CONSTRUCTORS ARE NOT PASSED DOWN TO CHILD CLASSES
+
+Why CONSTRUCTORS ARE NOT PASSED DOWN TO CHILD CLASSES?
+
+Because constructors decide how to build the class
+Building a Dog is not equal to Building an Animal
+They are different.
+Child classes must decide their own way to be created.
+
+Child classes do NOT automatically get parent constructors;
+they must define their own constructors and manually call the parent’s constructor.
+
+Why Class are not inherited?
+
+As constructor belongs to the only  class that creates the object
+
+Why constructor does not have return type?
+As they don't return anything they only prepare memory and setup the object
+
+Why parent constructor is called first?
+As child objects contains parent inside them
+So runtime must construct parent first
+
+Why you cannot call constructor directly like a method?
+Method runs when object is already created
+But Constructor runs for object creation 
+That 's the reason we cannot call constructor as a method
+
+Why default constructor is generated automatically?
+As constructor is required for object creation
+
+Why some languages do NOT allow default values in constructors?
+Constructor is a blueprint to build objects
+Defaults are optional choices
+If we have optional choices the compiler may get confused
+To avoid confusion, some languages simply do not allow default parameters in constructors.
+
+C# ALLOWS USING DEFAULT VALUES IN CONSTRUCTOR 
+WHY AND HOW CAN C# ALLOWS USING DEFAULT VALUES IN CONSTRUCTOR?
+
+C# has very clear and predictable rules how default parameters works
+1->C# does not use constructor overloading to resolve defaults
+C# treats default parameters like this:
+
+If the caller does not supply a value → C# substitutes the default before calling the constructor.
+It’s done at compile time, NOT runtime.
+
+new Person();
+new Person("Gungun");
+
+new Person("Unknown", 0);      // compiler inserts defaults
+new Person("Gungun", 0);       // compiler inserts default
+2->C# has a strong, simple overload resolution system
+
+If you have:
+Person(string name = "Unknown", int age = 0)
+Person(int age)
+
+
+C# knows which one the caller meant based on the argument types.
+Other languages (like Java and older C++) do NOT have this clarity, so they avoid default parameters to prevent compiler confusion.
+
+3->C# chooses “one constructor per call”
+
+They only modify the call site.
+So this:
+
+new Person();
+
+does NOT create a separate no-arg constructor.
+It is simply rewritten to:
+
+new Person("Unknown", 0);
+This is why C# can safely allow default parameters.
+
+TYPES OF CONSTRUCTOR IN C#-
+
+1->STATIC CONSTRUCTOR-
+This runs one time in the whole program, regardless of how many objects exist.
+
+ Runs before the class is use:
+-Before you create the first object
+-OR before you use any static member
+
+Imagine turning ON the factory machines for the first time — it happens once.
+
+ What does it do?
+
+Initializes static fields
+Sets up class-level configuration
+
+2->INSTANCE CONSTRUCTOR-
+Runs every time you create a new object
+If you create 5 objects → the constructor runs 5 times.
+Like building 5 cars from the blueprint → each car goes through the setup process.
+
+ What does it do?
+Initializes instance fields
+Sets up data for that specific object
+
+
+ What does “cannot be static-only” mean?
+
+It means:
+You cannot have a class that ONLY has a static constructor
+and
+also allows objects.
+This is allowed, BUT you cannot only have a static constructor and expect the class to work normally.
+Static constructor runs without object creation
+Instance constructor runs when object is created
+
+If your class is designed so that no object should ever be created, you must mark it as static.
+
+Constructor Overloading-
+
+Multiple constructors let you create the object in different ways.
+
+Example:
+
+public Student() {}
+public Student(string name) {}
+public Student(string name, int age) {}
+
+This gives flexibility for object creation.
+
+Why constructor name must match class name?
+
+Because its job is to build that class.
+
+If class name = House
+Constructor must be House()
+It’s like a recipe name must match the dish you're making.
+
+Why constructor cannot be abstract?
+
+Abstract means “incomplete”.
+You cannot construct an incomplete class.
+So constructors cannot be abstract.
+
+Why constructor cannot be virtual?
+
+Virtual means: “Actual method chosen at runtime.”
+But constructors are decided at compile time because object must be fully built before runtime logic.
+
+What REALLY happens before your constructor runs?
+1->Memory is allocated on the Heap
+
+The CLR says:
+“We need space for this object!”
+So it allocates enough memory for all fields
+This memory is empty at this moment
+
+2->All fields are set to DEFAULT values
+
+Before your constructor touches anything,
+CLR pre-fills memory like this:So even before your code runs, the object is in a valid, predictable state.
+
+3->Base class constructor runs FIRST
+
+Every class has a parent class. Because parent class must initialize its own fields before the child uses them.
+Field initializers run
+These are values you assign at declaration:These run after base constructor but before your constructor body.
+
+4->Your constructor finally runs
+
+Now C# runs:This is the final step that sets custom values or logic.
