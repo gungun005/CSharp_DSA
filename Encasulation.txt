@@ -1,0 +1,93 @@
+ENCAPSULATION IN C#
+
+It means keep data safe by hiding it and allowing controlled access
+In C# Encapsulation binds data (variable) and behaviour(methods)inside a single unit like class, struct ,interface etc
+
+Encapsulation=>Grouping data+ Methods Together + Restricting direct access
+
+Why Encapsulation is important?
+->protects data
+->prevents misuse
+->validates data
+->makes code flexible
+->gives you control over what values are acceptable or not
+
+Real World E.g.=>capsule medicine, school bag
+
+VERY BASIC E.g. in C#-
+class Bank
+{
+public long AcctNo;
+public string Name;
+public int Balance;
+public void GetBalance()
+public void Deposit()
+public void Withdraw()
+}
+//Here variables and methods are grouped together
+
+DATA HIDING:-
+Hides internal data from direct access
+Allows access only through method/properties
+We use:-
+1->Private variables-cannot be accessed directly
+2->Public methods/properties-to access private data safely
+
+
+e.g. USING SETTER AND GETTER METHODS
+public class Bank
+{
+//variable
+private double Balance;
+//methods
+public double GetBalance()
+{
+return balance;
+}
+public void SetBalance(double balance)
+{
+this.balance=balance;
+}
+}
+class Program
+{
+public static void Main()
+{
+Bank bank=new Bank();
+bank.SetBalance(500);
+Console.WriteLine(bank.GetBalance);
+}
+}
+
+
+Why we are using Setter /Getter in C#->
+As we can validate are values
+e.g->
+public void SetAmount(int Amount)
+{
+if(Amount>0)
+{
+this.amount=Amount;
+}
+}
+
+e.g. IMPLEMENTING ENCAPSULATION USING PROPERTIES
+
+
+C# offers properties so you don't need separate getter /setter
+e.g-> 
+public class Bank{
+private double Amount;
+public double Amount
+{
+get {return Amount;}
+set{
+if(value<0)
+throw new Exception("only positive values");
+}
+}
+}
+It means hiding data and allowing controlled access using methods /properties to keep data safe
+
+
+
