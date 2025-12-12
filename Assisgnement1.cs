@@ -29,3 +29,10 @@ s2.GetFullInfo();
 s3.GetFullInfo();
 }
 }
+/*WHAT EXTRA I SHOULD THINK IS
+ 1->TO USE CAMEL CASING 
+2-> USING ACCESSORS!{ get; } means it is read-only
+You can read it, but you cannot change it from outside the class
+e.g.
+public string FirstName { get; }
+*/
