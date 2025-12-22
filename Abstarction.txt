@@ -1,0 +1,70 @@
+ABSTRACTION IN C#-
+MANY CONCEPTS SUCH AS
+1->ABSTRACT CLASS
+2->ABSTRACT METHODS
+3->OVERRIDE
+4->NEW 
+5->VIRTUAL 
+6->ABSTRACT
+7->COMMON MISTAKES DONE IN INTERVIEW
+THESE ALL CONCEPTS ARE MENTIONED IN THE NOTEBOOK IN DETAIL REFER THEIR
+
+Show only necessary things and hide the complex things
+The user should know what the feature does the user should not see how it works internally
+You expose only required services
+We keep implementation hidden
+How to implement Abstraction in C#-
+It can be done using two ways-
+1->Using Interface(100% Abstraction)
+2->Using Abstract Classes(0-100% Abstraction)
+
+1->Implement Abstraction Using Interface
+
+STEP1- Create an interface with method name only (no implementation)
+
+e.g.=>
+public interface IBank{
+void ValidateCard();
+void WithdrawMoney();
+}
+//user knows about what service exist not how they work
+
+STEP2-Write a factory to hide object Creation
+
+e.g.=>public class BankFactory{
+public static IBank GetBankObject(string banktype)
+{
+if(banktype=="SBI")
+return new SBI();
+else if(banktype=="AXIS")
+return new AXIS();
+return NULL;
+}
+}
+STEP 3-SBI implements Interface
+Step4-AXIS implements Interface
+Step5-Main method uses interface
+Step6-User Sees IBank User cannot see how Sbi/Axis methods are written
+
+2->Implement using Abstract Class
+
+Here we define an abstract class with abstract methods
+e.g->
+public abstract class IBank
+{
+public abstract void ValidateCard();
+public abstract void WithdrawMoney();
+}
+//child classes implement these methods
+public class SBI:IBank
+{
+public override void BankTransfer()
+{
+Console.WriteLine("SBI BANK");
+}
+public override void CheckBalance()
+{
+Console.WriteLine("SBI CHECK");
+}
+}
+
