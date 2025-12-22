@@ -1,0 +1,20 @@
+INHERITANCE IN C#
+
+Topics to cover from notebook-
+1->What is inheritance
+2->6 Imp Rules of Inheritance
+3->Access Specifiers
+4->Base Keyword
+5->This Keyword
+6->Composition v/s Aggregation
+7->Generalization v/s Specialization
+8->IS-A v/s HAS-A
+9->Inheritance v/s Composition
+
+INTERFACES IN C#-
+1->What is an interface
+2->How to define an interface
+3->By default interface methods are abstract and default
+4->Important rules of Interface
+5->Interface Refrence
+6->Diamond Problem
