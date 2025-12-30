@@ -1,0 +1,33 @@
+EXTRA CONCEPTS
+1->OBJECT INITIALIZER
+2->ANONYMOUS OBJECT
+3->LOCAL FUNCTIONS
+4->YIELD OPERATOR
+5->YIELD RETURN 
+6->YIELD BREAK
+
+7->SERIALIZATION
+7.1->WHAT
+7.2->WHY
+7.3->TYPES
+
+8->ICloneable Interface
+9->Shallow Copy V/s Deep Copy
+10->Assembly
+-private
+-shared
+-strong name
+
+11->var
+12->dynamic
+13-Covariance
+14-Contravariance
+15-default
+16-Collection Interfaces and types
+17-IComparable Interface
+18-IEquality Comparer 
+19-EAZY LOADING
+20-LAZY LOADING
+
+
+
